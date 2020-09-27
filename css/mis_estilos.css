@@ -1,0 +1,62 @@
+
+h1{
+	color: white;
+	font-style: oblique;
+	font-size: large;
+	font-size: 40px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+nav{
+	background: rgba(146, 43, 33,0.9);
+}
+.boton_buscar{
+	background: rgba(146, 43, 33,0.9);
+	padding-right: 1em;
+	padding-left: 1em;
+	border: none;
+	color: white;
+}
+.boton_buscar:hover {
+	background: rgb(146, 43, 33);
+}
+.items_poke{
+	text-align: center;
+	background: rgb(234, 237, 237);
+	font-size: 15px;
+}
+.items_poke:hover{
+	background: rgb(146, 43, 33);
+	cursor: pointer;
+	color: white;
+}
+.centrar{
+	text-align: center;
+}
+.paginador{
+	background: rgba(146, 43, 33,0.9);
+	padding: 10px;
+	border: none;
+	color: white;
+	border-radius: 10%;
+	margin-right: 10px;
+}
+.paginador:hover{
+	background: rgb(146, 43, 33);
+}
+img{
+	width: 20%;
+}
+ul{
+	list-style: none;
+}
+.sesion{
+	color: white;
+}
+a{
+	color: grey;
+}
+a:hover{
+	color: grey;
+	text-decoration: none;
+}
