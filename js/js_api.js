@@ -6,14 +6,17 @@ $(document).ready(function() {
 		var url = $(this).attr('link');
 		pasarPagina(url);
 	});
+	
 	$(".atras").click(function(event) {
 		var url = $(this).attr('link');
 		pasarPagina(url);
 	});
+	
 	$(".boton_buscar").click(function(event) {
 		var nombre = $("#buscar_pokemon").val();
 		buscarPokemon(nombre);
 	});
+	
 	$(".buscar_pokemon").keyup(function(event) {
 		$("#mensaje_no_encontrado").hide();
 	});
