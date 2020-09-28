@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	$(".menu_pokemon").hide();
+	$("#mensaje_no_encontrado").hide();
 	generarLista();
 	$(".adelante").click(function(event) {
 		var url = $(this).attr('link');
@@ -8,6 +9,13 @@ $(document).ready(function() {
 	$(".atras").click(function(event) {
 		var url = $(this).attr('link');
 		pasarPagina(url);
+	});
+	$(".boton_buscar").click(function(event) {
+		var nombre = $("#buscar_pokemon").val();
+		buscarPokemon(nombre);
+	});
+	$(".buscar_pokemon").keyup(function(event) {
+		$("#mensaje_no_encontrado").hide();
 	});
 });
 //Generar lista inicialmente
@@ -24,6 +32,7 @@ function generarLista(){
 		CargarItems(data);
 		VerificarAtrasAdelante(data);
 		$(".items_poke").click(function(event) {
+			$("#mensaje_no_encontrado").hide();
 			var nombre = $(this).children().first().html();
 			buscarPokemon(nombre);
 		});
@@ -49,6 +58,7 @@ function buscarPokemon(nombre){
 		data: {mensaje: 'buscar_poke', nombre : nombre},
 	})
 	.done(function(data) {
+		console.log(data);
 		$(".name_pokemon").html(nombre);
 		texto="<ul>";
 		for (var i = 0; i < data.abilities.length; i++) {
@@ -60,9 +70,14 @@ function buscarPokemon(nombre){
 		$(".imagen_poke").append(texto);
 		$(".cargando").hide();
 		$(".menu_pokemon").slideDown(500);
+		$("#buscar_pokemon").val("");
 	})
 	.fail(function(data) {
-		console.log("Entro aqui");
+		$("#buscar_pokemon").val("");
+		$(".cargando").hide();
+		$("#mensaje_no_encontrado").show();
+		$("#mensaje_no_encontrado").html("Pokemon no encontrado");
+		mostrarMenu();
 		console.log(data);
 	});
 }
@@ -74,6 +89,7 @@ function mostrarMenu(){
 }
 //Generar lista al pasar pagina
 function pasarPagina(url){
+	$("#mensaje_no_encontrado").hide();
 	$(".contenido_items").slideUp(500);
 	$(".cargando").show();
 	$.ajax({
