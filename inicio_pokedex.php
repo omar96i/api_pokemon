@@ -27,6 +27,18 @@
 			</div>
 		</div>
 	</nav>
+	<!-- CONTENIDO BUSCAR -->
+	<div class="container mt-4">
+		<div class="input-group mb-3">
+		  	<input type="text" class="form-control" placeholder="Nombre del pokemon" id="buscar_pokemon" aria-label="Recipient's username" aria-describedby="basic-addon2">
+		  	<div class="input-group-append">
+		    	<button class="boton_buscar">Buscar</button>
+		  	</div>
+		</div>
+		<div class="alert alert-danger centrar" id="mensaje_no_encontrado" role="alert">
+		</div>
+	</div>
+	<!-- FIN CONTENIDO BUSCAR -->
 	<!-- GIF CARGANDO -->
 	<div class="container mt-3 cargando">
 		<div class="row">
