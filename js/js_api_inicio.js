@@ -1,7 +1,7 @@
 $( document ).ready(function() {
   
 	$('.message').click(function(){
-   	$('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+   		$('form').animate({height: "toggle", opacity: "toggle"}, "slow");
 	});
   
 	$("#crear_usuario").click(function(event) {
@@ -18,12 +18,11 @@ $( document ).ready(function() {
 		.done(function(data) {
 			if (data == "OK##CONSULTA") {
 				$(".mensaje_error").html("Usuario registrado");
-   			$('form').animate({height: "toggle", opacity: "toggle"}, "slow");
-   			$("#name_registro").val("");
-   			$("#pass_registro").val("");
-   			$("#email_registro").val("");
+				$('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+				$("#name_registro").val("");
+				$("#pass_registro").val("");
+				$("#email_registro").val("");
 				$(".mensaje_error").html("");
-
 			}else{
 				$(".mensaje_error").html("Datos incorrectos");
 			}
