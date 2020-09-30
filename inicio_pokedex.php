@@ -1,8 +1,10 @@
 <?php 
 	session_start();
-	if (!isset($_SESSION['nombre']) && !isset($_SESSION['correo']) && empty($_SESSION['nombre'] && empty($_SESSION['correo']))) {
-		header("Location: index.php");
-		die();
+	if (!isset($_SESSION['nombre']) && !isset($_SESSION['correo'])) {
+		if (empty($_SESSION['nombre'] && empty($_SESSION['correo']))) {
+			header("Location: index.php");
+			die();
+		}
 	}
 ?>
 <!DOCTYPE html>
