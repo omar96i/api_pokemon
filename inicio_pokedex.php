@@ -3,6 +3,9 @@
 	if (!isset($_SESSION['nombre']) && !isset($_SESSION['correo'])) {
 		header("Location: index.php");
 		die();
+	}else if(empty($_SESSION['nombre']) && empty($_SESSION['correo'])){
+	    	header("Location: index.php");
+		die();
 	}
 ?>
 <!DOCTYPE html>
